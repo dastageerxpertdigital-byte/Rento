@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Light Mode — Clean neutral palette, accent-only green */
+  --bg0: #F5F6F8;
+  --bg1: #FFFFFF;
+  --bg2: #FFFFFF;
+  --bg3: #F0F1F4;
+  --bg4: #E4E6EB;
+  --pri: #2ECC8A;
+  --pri2: #54DBA2;
+  --pri-transparent: rgba(46, 204, 138, 0.10);
+  --sec: #27B99A;
+  --acc: #C07B18;
+  --red: #D04444;
+  --blue: #3478C0;
+  --t0: #111827;
+  --t1: #374151;
+  --t2: #6B7280;
+  --t3: #D1D5DB;
+  --bd: #E5E7EB;
+  --bd2: #D1D5DB;
+  --nav: rgba(255, 255, 255, 0.92);
+}
+
+.dark {
+  /* Dark Mode — Elevated soft darks */
+  --bg0: #121417;
+  /* Instead of very dark #09090B */
+  --bg1: #181A1F;
+  /* Instead of dark #0F0F12 */
+  --bg2: #1E2026;
+  /* Cards etc */
+  --bg3: #262931;
+  /* Hover states */
+  --bg4: #323640;
+  --pri: #2ECC8A;
+  --pri2: #54DBA2;
+  --pri-transparent: rgba(46, 204, 138, 0.15);
+  --sec: #27B99A;
+  --acc: #F0C94A;
+  --red: #FB7185;
+  /* Softer red for dark mode */
+  --blue: #60A5FA;
+  --t0: #F8FAFC;
+  /* Brighter white text */
+  --t1: #CBD5E1;
+  /* Slate 300 */
+  --t2: #94A3B8;
+  /* Slate 400 */
+  --t3: #64748B;
+  /* Slate 500 */
+  --bd: #2E323B;
+  /* Visible but soft borders */
+  --bd2: #3F4451;
+  --nav: rgba(18, 20, 23, 0.95);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg0);
+  color: var(--t0);
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-fraunces {
+  font-family: 'Fraunces', serif;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, var(--pri), var(--sec));
+}
+
+.glass-effect {
+  background: var(--nav);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--t3);
+}
+
+/* Toggle Switch */
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: var(--pri);
+}
+
+.toggle-checkbox:checked+.toggle-label {
+  background-color: var(--pri);
+}
+
+/* ---- Premium Loading Spinner ---- */
+.rento-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  width: 100%;
+}
+
+.rento-spinner {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.rento-spinner::before,
+.rento-spinner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.rento-spinner::before {
+  border-top-color: var(--pri);
+  animation: rento-spin 0.9s ease-in-out infinite;
+}
+
+.rento-spinner::after {
+  border-bottom-color: var(--sec);
+  animation: rento-spin 0.9s ease-in-out infinite reverse;
+  inset: 4px;
+}
+
+@keyframes rento-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skeleton shimmer for data placeholders */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg3);
+  border-radius: 8px;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent);
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

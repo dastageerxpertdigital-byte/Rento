@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449548580573",
+    "project_id": "rento-6bc38",
+    "storage_bucket": "rento-6bc38.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449548580573:android:e1e9add8507c931b0d8d34",
+        "android_client_info": {
+          "package_name": "com.dastageer.rentoandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449548580573-lhvk37tlvc8crrqrstlb6ignr3jea807.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI93lAURFl8gySogJXeJY9Ngq__Pi4xHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449548580573-lhvk37tlvc8crrqrstlb6ignr3jea807.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
