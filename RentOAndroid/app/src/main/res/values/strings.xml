@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">RentO</string>
+
+    <!-- RentoStatusBar -->
+    <string name="status_bar_time">9:41</string>
+    <string name="status_bar_signal_cd">Signal strength indicator</string>
+    <string name="status_bar_battery_cd">Battery status indicator</string>
+
+    <!-- Buttons -->
+    <string name="common_loading_cd">Loading</string>
+
+    <!-- ProgressStepBar -->
+    <string name="form_step_label">Step %1$d of %2$d</string>
+
+    <!-- PropertyCard -->
+    <string name="rento_property_card_cd">%1$s in %2$s, %3$s PKR per month</string>
+
+    <!-- TenantRequestCard -->
+    <string name="rento_request_card_cd">Request by %1$s, budget up to %2$s PKR</string>
+
+    <!-- BottomNavBar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_add_cd">Add listing or request</string>
+
+    <!-- AddOverlaySheet -->
+    <string name="add_overlay_title">What\'s your goal?</string>
+    <string name="add_overlay_subtitle">Choose how you want to use the platform today.</string>
+    <string name="add_overlay_looking_title">I\'m Looking</string>
+    <string name="add_overlay_looking_subtitle">Post a request and let hosts find you</string>
+    <string name="add_overlay_hosting_title">I\'m Hosting</string>
+    <string name="add_overlay_hosting_subtitle">List a property to find the perfect tenant</string>
+
+    <!-- HomeBannerSlider -->
+    <string name="banner_featured_label">✦ FEATURED</string>
+
+    <!-- GlassDialog -->
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_try_again">Try Again</string>
+    <string name="dialog_loading_default">Please wait…</string>
+    <string name="dialog_error_default_title">Something went wrong</string>
+
+    <!-- RentoDeleteSpinner -->
+    <string name="spinner_cd">Loading, please wait</string>
+
+    <!-- InAppNotificationBanner -->
+    <string name="notif_banner_close_cd">Dismiss notification</string>
+    <string name="notif_banner_tap_cd">Open notification</string>
+</resources>

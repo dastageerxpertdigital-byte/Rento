@@ -1,0 +1,37 @@
+build:
+  maxIssues: 0
+  excludeCorrectable: false
+  weights:
+    # complexity: 2
+    # LongParameterList: 1
+    # style: 1
+    # comments: 1
+
+config:
+  validation: true
+  warningsAsErrors: false
+  checkExhaustiveness: false
+
+formatting:
+  active: true
+
+naming:
+  active: true
+  FunctionNaming:
+    active: true
+    # Allow uppercase for composables
+    ignoreAnnotated: ['Composable']
+
+style:
+  active: true
+  MagicNumber:
+    active: false
+  WildcardImport:
+    active: false
+
+complexity:
+  active: true
+  TooManyFunctions:
+    active: false
+  LongParameterList:
+    active: false
