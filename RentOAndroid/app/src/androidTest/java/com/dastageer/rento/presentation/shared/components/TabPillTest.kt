@@ -16,12 +16,12 @@ class TabPillTest {
     @Test
     fun testTabPill_SelectsCorrectTab() {
         var selectedIndex = 0
-        rule.setContent { 
+        rule.setContent {
             TabPill(
                 tabs = listOf("One", "Two"),
                 selectedIndex = 0,
                 onTabSelected = { selectedIndex = it }
-            ) 
+            )
         }
         rule.onNodeWithText("Two").performClick()
         assert(selectedIndex == 1)

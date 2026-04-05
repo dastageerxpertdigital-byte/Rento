@@ -4,6 +4,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,16 +17,18 @@ class RentoChipTest {
     @Test
     fun testRentoChip() {
         var clicked = false
-        rule.setContent { RentoChip(text = "Chip", isSelected = false, onClick = { clicked = true }) }
+        rule.setContent { RentoChip(label = "Chip", selected = false, onClick = { clicked = true }) }
         rule.onNodeWithText("Chip").performClick()
-        assert(clicked)
+        assertTrue(clicked)
     }
 
     @Test
-    fun testRentoChip_Disabled() {
+    fun testRentoChip_Selected() {
         var clicked = false
-        rule.setContent { RentoChip(text = "Chip Disabled", isSelected = false, isEnabled = false, onClick = { clicked = true }) }
-        rule.onNodeWithText("Chip Disabled").performClick()
-        assert(!clicked)
+        rule.setContent {
+            RentoChip(label = "Chip Selected", selected = true, onClick = { clicked = true })
+        }
+        rule.onNodeWithText("Chip Selected").performClick()
+        assertTrue(clicked)
     }
 }

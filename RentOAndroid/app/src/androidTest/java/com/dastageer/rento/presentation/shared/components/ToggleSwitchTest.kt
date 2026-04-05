@@ -7,14 +7,17 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class RadiusCircleTest {
+class ToggleSwitchTest {
     @get:Rule
     val rule = createComposeRule()
 
     @Test
-    fun testRadiusCircle() {
-        rule.setContent { 
-            RadiusCircle(radiusKm = 5f) 
+    fun testToggleSwitch() {
+        rule.setContent {
+            ToggleSwitch(
+                checked = false,
+                onCheckedChange = { }
+            )
         }
     }
 }

@@ -7,21 +7,14 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class GlassDialogTest {
+class ProgressBarTest {
     @get:Rule
     val rule = createComposeRule()
 
     @Test
-    fun testGlassDialog() {
-        rule.setContent { 
-            GlassDialog(
-                showDialog = true,
-                onDismissRequest = {},
-                state = GlassDialogState.IDLE,
-                title = "Title",
-                description = "Desc",
-                primaryBtnText = "Ok"
-            ) 
+    fun testProgressBar() {
+        rule.setContent {
+            RentoProgressBar(progress = 0.5f)
         }
     }
 }

@@ -8,15 +8,15 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class BadgeTest {
+class ProgressStepBarTest {
     @get:Rule
     val rule = createComposeRule()
 
     @Test
-    fun testBadgeVariants() {
-        rule.setContent { 
-            Badge(text = "PrimaryVariant", variant = BadgeVariant.PRIMARY)
+    fun testProgressStepBar() {
+        rule.setContent {
+            ProgressStepBar(currentStep = 0, totalSteps = 2)
         }
-        rule.onNodeWithText("PrimaryVariant").assertExists()
+        rule.onNodeWithText("Step 1 of 2").assertExists()
     }
 }
