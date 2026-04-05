@@ -51,14 +51,15 @@
 - [x] M01-T36 — ErrorBanner
 - [x] M01-T37 — MeshBackground
 - [x] M01-T38 — GradientText
-- [x] M01-T39 — Unit Tests (Written but deferred execution until device is available)
-- [x] M01-T40 — Lint + Detekt + Build Gate (Deferred execution)
+- [x] M01-T39 — Unit Tests (JVM executed; report: `app/build/reports/tests/testDebugUnitTest/index.html`)
+- [x] M01-T40 — Lint + Detekt + Build Gate (assemble/test/lint/detekt + androidTest build verified; instrumentation pending device)
 
 ### Build Gate (filled when module complete)
 - `./gradlew assembleDebug`: PASS
-- `./gradlew test`: Deferred (awaiting device execution)
-- `./gradlew lint`: Deferred (awaiting device execution)
-- `./gradlew detekt`: Deferred (awaiting device execution)
+- `./gradlew test`: PASS (executed; see `app/build/test-results/testDebugUnitTest`)
+- `./gradlew lint`: PASS (executed; report: `app/build/reports/lint-results-debug.html`)
+- `./gradlew detekt`: PASS (executed; findings tolerated via `build.maxIssues` + formatting severity)
+- `./gradlew assembleDebugAndroidTest`: PASS (executed; verifies `src/androidTest` compiles)
 - `./gradlew koverReport`: Deferred (awaiting device execution)
 
 ### Blocking Issues
@@ -70,11 +71,18 @@ None
 **Status:** 🔄 In Progress
 **Branch:** feature/module-02-auth
 
+### Baseline (2026-04-04)
+- `./gradlew assembleDebug test lint detekt assembleDebugAndroidTest`: PASS
+- JVM unit results: `app/build/test-results/testDebugUnitTest/`
+- JVM unit report: `app/build/reports/tests/testDebugUnitTest/index.html`
+- Lint report: `app/build/reports/lint-results-debug.html`
+- Note: `detekt` prints findings but passes per current `detekt.yml` policy; `connectedDebugAndroidTest` requires a device/emulator.
+
 ### Tasks
-- [ ] M02-T01 — Domain models — `User`, `AuthState` (Code written, awaiting build verification)
-- [ ] M02-T02 — Repository interfaces — `AuthRepository`, `UserRepository` (Code written, awaiting build verification)
-- [ ] M02-T03 — `AuthRepositoryImpl` (Code written, awaiting build verification)
-- [ ] M02-T04 — `UserRepositoryImpl` (Code written, awaiting build verification)
+- [ ] M02-T01 — Domain models — `User`, `AuthState` (Build verified; behavior tests pending)
+- [ ] M02-T02 — Repository interfaces — `AuthRepository`, `UserRepository` (Build verified; behavior tests pending)
+- [ ] M02-T03 — `AuthRepositoryImpl` (Build verified; Firebase behavior tests pending)
+- [ ] M02-T04 — `UserRepositoryImpl` (Build verified; Firestore behavior tests pending)
 - [ ] M02-T05 — `AuthViewModel`
 - [ ] M02-T06 — `ForgotPasswordViewModel`
 - [ ] M02-T07 — `OnboardingViewModel`
