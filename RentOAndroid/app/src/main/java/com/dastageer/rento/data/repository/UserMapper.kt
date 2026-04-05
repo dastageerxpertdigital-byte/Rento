@@ -39,7 +39,11 @@ fun DocumentSnapshot.toUser(): User? {
         emailVerified = dto.emailVerified,
         isBlocked = dto.isBlocked,
         blockReason = dto.blockReason,
-        accountType = runCatching { AccountType.valueOf(dto.accountType.uppercase()) }.getOrDefault(AccountType.INDIVIDUAL),
+        accountType = runCatching {
+            AccountType.valueOf(
+                dto.accountType.uppercase()
+            )
+        }.getOrDefault(AccountType.INDIVIDUAL),
         defaultMode = runCatching { UserMode.valueOf(dto.defaultMode.uppercase()) }.getOrDefault(UserMode.LOOKING),
         onboardingComplete = dto.onboardingComplete,
         province = dto.province,

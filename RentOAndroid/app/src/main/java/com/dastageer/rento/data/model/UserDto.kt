@@ -11,9 +11,9 @@ data class UserDto(
     val emailVerified: Boolean = false,
     val isBlocked: Boolean = false,
     val blockReason: String? = null,
-    val userType: String = "user",             // "user" | "admin"
-    val accountType: String = "individual",    // "individual" | "business"
-    val defaultMode: String = "looking",       // "looking" | "hosting"
+    val userType: String = "user", // "user" | "admin"
+    val accountType: String = "individual", // "individual" | "business"
+    val defaultMode: String = "looking", // "looking" | "hosting"
     val onboardingComplete: Boolean = false,
     val province: String = "",
     val city: String = "",

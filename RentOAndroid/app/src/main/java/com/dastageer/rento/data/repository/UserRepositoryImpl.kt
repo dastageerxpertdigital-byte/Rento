@@ -32,16 +32,16 @@ class UserRepositoryImpl(
         runCatching {
             val updates = mapOf(
                 "onboardingComplete" to true,
-                "defaultMode"        to onboarding.defaultMode.name.lowercase(),
-                "name"               to onboarding.name,
-                "phone"              to onboarding.phone,
-                "dateOfBirth"        to (onboarding.dateOfBirth ?: ""),
-                "province"           to onboarding.province,
-                "city"               to onboarding.city,
-                "deviceLat"          to onboarding.deviceLat,
-                "deviceLng"          to onboarding.deviceLng,
-                "accountType"        to onboarding.accountType.name.lowercase(),
-                "referralSource"     to onboarding.referralSources,
+                "defaultMode" to onboarding.defaultMode.name.lowercase(),
+                "name" to onboarding.name,
+                "phone" to onboarding.phone,
+                "dateOfBirth" to (onboarding.dateOfBirth ?: ""),
+                "province" to onboarding.province,
+                "city" to onboarding.city,
+                "deviceLat" to onboarding.deviceLat,
+                "deviceLng" to onboarding.deviceLng,
+                "accountType" to onboarding.accountType.name.lowercase(),
+                "referralSource" to onboarding.referralSources,
             )
             firestore.collection("users").document(uid).update(updates).await()
         }

@@ -43,12 +43,15 @@ class AuthRepositoryImpl(
             val result = firebaseAuth.createUserWithEmailAndPassword(email.trim(), password).await()
             result.user?.sendEmailVerification()?.await()
             // Firestore doc creation delegated to RegisterUseCase — not here
+            Unit
         }.mapFirebaseException()
 
     override suspend fun resendVerification(): Result<Unit> =
         runCatching {
-            firebaseAuth.currentUser?.sendEmailVerification()?.await()
+            val user = firebaseAuth.currentUser
                 ?: throw RentoAuthException.Unknown("No authenticated user.")
+            user.sendEmailVerification().await()
+            Unit
         }.mapFirebaseException()
 
     override suspend fun isEmailVerified(): Result<Boolean> =
@@ -60,20 +63,24 @@ class AuthRepositoryImpl(
     override suspend fun sendPasswordReset(email: String): Result<Unit> =
         runCatching {
             firebaseAuth.sendPasswordResetEmail(email.trim()).await()
+            Unit
         }.mapFirebaseException()
 
     override suspend fun signOut() { firebaseAuth.signOut() }
-    
+
     override fun getCurrentUserId(): String? = firebaseAuth.currentUser?.uid
-    
+
     override fun isLoggedIn(): Boolean = firebaseAuth.currentUser != null
 
     override fun getAuthState(): Flow<AuthState> = callbackFlow {
         val listener = FirebaseAuth.AuthStateListener { auth ->
             val user = auth.currentUser
             trySend(
-                if (user == null) AuthState.Unauthenticated
-                else AuthState.Authenticated(user.uid, user.isEmailVerified)
+                if (user == null) {
+                    AuthState.Unauthenticated
+                } else {
+                    AuthState.Authenticated(user.uid, user.isEmailVerified)
+                }
             )
         }
         firebaseAuth.addAuthStateListener(listener)
@@ -96,7 +103,7 @@ class AuthRepositoryImpl(
 private fun <T> Result<T>.mapFirebaseException(): Result<T> = this.recoverCatching { e ->
     when {
         e is FirebaseAuthInvalidCredentialsException &&
-                e.errorCode == "ERROR_INVALID_EMAIL" -> throw RentoAuthException.InvalidEmail()
+            e.errorCode == "ERROR_INVALID_EMAIL" -> throw RentoAuthException.InvalidEmail()
         e is FirebaseAuthInvalidCredentialsException -> throw RentoAuthException.WrongPassword()
         e is FirebaseAuthInvalidUserException -> throw RentoAuthException.UserNotFound()
         e is FirebaseAuthUserCollisionException -> throw RentoAuthException.EmailAlreadyInUse()
