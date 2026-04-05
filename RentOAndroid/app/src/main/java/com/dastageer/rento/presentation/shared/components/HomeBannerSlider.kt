@@ -29,7 +29,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dastageer.rento.R
@@ -81,7 +80,7 @@ fun HomeBannerSlider(
             modifier = Modifier.fillMaxSize()
         ) { page ->
             val slide = slides[page]
-            
+
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -159,7 +158,7 @@ fun HomeBannerSlider(
                                     animationSpec = tween(320),
                                     label = "dotWidth"
                                 )
-                                
+
                                 Box(
                                     modifier = Modifier
                                         .size(width = dotWidth, height = 6.dp)

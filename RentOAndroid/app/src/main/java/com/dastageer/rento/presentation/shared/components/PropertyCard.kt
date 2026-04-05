@@ -32,14 +32,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.dastageer.rento.R
 import com.dastageer.rento.presentation.shared.animations.BounceEffect
 import com.dastageer.rento.presentation.shared.icons.RentoIcons
 import com.dastageer.rento.presentation.shared.theme.LocalRentoColors
@@ -79,7 +77,7 @@ fun PropertyCard(
     val typography = LocalRentoTypography.current
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
-    
+
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 0.985f else 1f,
         animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy),
@@ -243,12 +241,28 @@ fun PropertyCard(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                            Icon(RentoIcons.Bed, contentDescription = null, tint = colors.t2, modifier = Modifier.size(14.dp))
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            Icon(
+                                RentoIcons.Bed,
+                                contentDescription = null,
+                                tint = colors.t2,
+                                modifier = Modifier.size(14.dp)
+                            )
                             Text("${data.beds} bed", fontSize = 12.5.sp, color = colors.t2)
                         }
-                        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                            Icon(RentoIcons.Bath, contentDescription = null, tint = colors.t2, modifier = Modifier.size(14.dp))
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            Icon(
+                                RentoIcons.Bath,
+                                contentDescription = null,
+                                tint = colors.t2,
+                                modifier = Modifier.size(14.dp)
+                            )
                             Text("${data.baths} bath", fontSize = 12.5.sp, color = colors.t2)
                         }
                     }

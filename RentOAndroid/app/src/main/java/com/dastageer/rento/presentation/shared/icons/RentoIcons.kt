@@ -6,7 +6,6 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.PathParser
-import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
 /**
@@ -21,10 +20,10 @@ object RentoIcons {
         name: String,
         block: ImageVector.Builder.() -> Unit,
     ): ImageVector = ImageVector.Builder(
-        name           = "RentoIcons.$name",
-        defaultWidth   = 24.dp,
-        defaultHeight  = 24.dp,
-        viewportWidth  = 24f,
+        name = "RentoIcons.$name",
+        defaultWidth = 24.dp,
+        defaultHeight = 24.dp,
+        viewportWidth = 24f,
         viewportHeight = 24f,
     ).apply(block).build()
 
@@ -74,7 +73,7 @@ object RentoIcons {
             sp("M4,2h16a2,2 0 0,1 2,2v16a2,2 0 0,1 -2,2H4a2,2 0 0,1 -2,-2V4a2,2 0 0,1 2,-2z")
             sp("M9,22v-4h6v4")
             listOf(9f to 7f, 15f to 7f, 9f to 11f, 15f to 11f, 9f to 15f, 15f to 15f).forEach { (cx, cy) ->
-                fp("M${cx},${cy}m-1,0a1,1 0 1,0 2,0a1,1 0 1,0 -2,0")
+                fp("M$cx,${cy}m-1,0a1,1 0 1,0 2,0a1,1 0 1,0 -2,0")
             }
         }
     }
@@ -107,9 +106,12 @@ object RentoIcons {
 
     val Snow: ImageVector by lazy {
         buildIcon("Snow") {
-            sp("M2,12L22,12"); sp("M12,2L12,22")
-            sp("M20,16L12,12L20,8"); sp("M4,8L12,12L4,16")
-            sp("M16,4L12,12L8,4"); sp("M8,20L12,12L16,20")
+            sp("M2,12L22,12")
+            sp("M12,2L12,22")
+            sp("M20,16L12,12L20,8")
+            sp("M4,8L12,12L4,16")
+            sp("M16,4L12,12L8,4")
+            sp("M8,20L12,12L16,20")
         }
     }
 
@@ -123,7 +125,9 @@ object RentoIcons {
 
     val Flame: ImageVector by lazy {
         buildIcon("Flame") {
-            sp("M8.5,14.5A2.5,2.5 0 0,0 11,12c0,-1.38 -0.5,-2 -1,-3C8.928,6.857 9.776,4.946 12,3c0.5,2.5 2,4.9 4,6.5c2,1.6 3,3.5 3,5.5a7,7 0 1,1 -14,0c0,-1.153 0.433,-2.294 1,-3a2.5,2.5 0 0,0 2.5,2.5z")
+            sp(
+                "M8.5,14.5A2.5,2.5 0 0,0 11,12c0,-1.38 -0.5,-2 -1,-3C8.928,6.857 9.776,4.946 12,3c0.5,2.5 2,4.9 4,6.5c2,1.6 3,3.5 3,5.5a7,7 0 1,1 -14,0c0,-1.153 0.433,-2.294 1,-3a2.5,2.5 0 0,0 2.5,2.5z"
+            )
         }
     }
 
@@ -137,7 +141,8 @@ object RentoIcons {
     val Lift: ImageVector by lazy {
         buildIcon("Lift") {
             sp("M4,4h16a2,2 0 0,1 2,2v12a2,2 0 0,1 -2,2H4a2,2 0 0,1 -2,-2V6a2,2 0 0,1 2,-2z")
-            sp("M16,10L12,6L8,10"); sp("M12,18L12,6")
+            sp("M16,10L12,6L8,10")
+            sp("M12,18L12,6")
         }
     }
 
@@ -167,10 +172,10 @@ object RentoIcons {
         buildIcon("Paw") {
             sp("M12,12c-2.76,0 -5,2.24 -5,5s2.24,5 5,5s5,-2.24 5,-5s-2.24,-5 -5,-5z")
             listOf(6f to 10f, 18f to 10f).forEach { (cx, cy) ->
-                sp("M${cx},${cy - 3}A3,3 0 1,0 ${cx},${cy + 3}A3,3 0 0,0 ${cx},${cy - 3}")
+                sp("M$cx,${cy - 3}A3,3 0 1,0 $cx,${cy + 3}A3,3 0 0,0 $cx,${cy - 3}")
             }
             listOf(10.5f to 5f, 13.5f to 5f).forEach { (cx, cy) ->
-                sp("M${cx},${cy - 3}A3,3 0 1,0 ${cx},${cy + 3}A3,3 0 0,0 ${cx},${cy - 3}")
+                sp("M$cx,${cy - 3}A3,3 0 1,0 $cx,${cy + 3}A3,3 0 0,0 $cx,${cy - 3}")
             }
         }
     }
@@ -180,7 +185,8 @@ object RentoIcons {
     val Hospital: ImageVector by lazy {
         buildIcon("Hospital") {
             sp("M3,3h18a2,2 0 0,1 2,2v14a2,2 0 0,1 -2,2H3a2,2 0 0,1 -2,-2V5a2,2 0 0,1 2,-2z")
-            sp("M12,8L12,16"); sp("M8,12L16,12")
+            sp("M12,8L12,16")
+            sp("M8,12L16,12")
         }
     }
 
@@ -202,7 +208,7 @@ object RentoIcons {
     val Bank: ImageVector by lazy {
         buildIcon("Bank") {
             sp("M3,22L21,22")
-            listOf(6f, 10f, 14f, 18f).forEach { x -> sp("M${x},18L${x},11") }
+            listOf(6f, 10f, 14f, 18f).forEach { x -> sp("M$x,18L$x,11") }
             sp("M12,2L20,7L4,7Z")
         }
     }
@@ -221,7 +227,10 @@ object RentoIcons {
     val Ok: ImageVector get() = Check
 
     val Close: ImageVector by lazy {
-        buildIcon("Close") { sp("M18,6L6,18"); sp("M6,6L18,18") }
+        buildIcon("Close") {
+            sp("M18,6L6,18")
+            sp("M6,6L18,18")
+        }
     }
     val X: ImageVector get() = Close
 
@@ -248,7 +257,8 @@ object RentoIcons {
     val MapIcon: ImageVector by lazy {
         buildIcon("Map") {
             sp("M1,6L1,22L8,18L16,22L23,18L23,2L16,6L8,2Z")
-            sp("M8,2L8,18"); sp("M16,6L16,22")
+            sp("M8,2L8,18")
+            sp("M16,6L16,22")
         }
     }
 
@@ -258,13 +268,17 @@ object RentoIcons {
 
     val Heart: ImageVector by lazy {
         buildIcon("Heart") {
-            sp("M20.84,4.61a5.5,5.5 0 0,0 -7.78,0L12,5.67l-1.06,-1.06a5.5,5.5 0 0,0 -7.78,7.78l1.06,1.06L12,21.23l7.78,-7.78l1.06,-1.06a5.5,5.5 0 0,0 0,-7.78z")
+            sp(
+                "M20.84,4.61a5.5,5.5 0 0,0 -7.78,0L12,5.67l-1.06,-1.06a5.5,5.5 0 0,0 -7.78,7.78l1.06,1.06L12,21.23l7.78,-7.78l1.06,-1.06a5.5,5.5 0 0,0 0,-7.78z"
+            )
         }
     }
 
     val HeartFilled: ImageVector by lazy {
         buildIcon("HeartFilled") {
-            fsp("M20.84,4.61a5.5,5.5 0 0,0 -7.78,0L12,5.67l-1.06,-1.06a5.5,5.5 0 0,0 -7.78,7.78l1.06,1.06L12,21.23l7.78,-7.78l1.06,-1.06a5.5,5.5 0 0,0 0,-7.78z")
+            fsp(
+                "M20.84,4.61a5.5,5.5 0 0,0 -7.78,0L12,5.67l-1.06,-1.06a5.5,5.5 0 0,0 -7.78,7.78l1.06,1.06L12,21.23l7.78,-7.78l1.06,-1.06a5.5,5.5 0 0,0 0,-7.78z"
+            )
         }
     }
 
@@ -283,15 +297,25 @@ object RentoIcons {
     }
 
     val Back: ImageVector by lazy {
-        buildIcon("Back") { sp("M19,12H5"); sp("M12,19L5,12L12,5") }
+        buildIcon("Back") {
+            sp("M19,12H5")
+            sp("M12,19L5,12L12,5")
+        }
     }
 
     val Plus: ImageVector by lazy {
-        buildIcon("Plus") { sp("M12,5L12,19"); sp("M5,12L19,12") }
+        buildIcon("Plus") {
+            sp("M12,5L12,19")
+            sp("M5,12L19,12")
+        }
     }
 
     val Filter: ImageVector by lazy {
-        buildIcon("Filter") { sp("M4,6L20,6"); sp("M8,12L16,12"); sp("M11,18L13,18") }
+        buildIcon("Filter") {
+            sp("M4,6L20,6")
+            sp("M8,12L16,12")
+            sp("M11,18L13,18")
+        }
     }
 
     val Pin: ImageVector by lazy {
@@ -306,7 +330,8 @@ object RentoIcons {
             sp("M18,2A3,3 0 1,0 18,8A3,3 0 0,0 18,2z")
             sp("M6,9A3,3 0 1,0 6,15A3,3 0 0,0 6,9z")
             sp("M18,16A3,3 0 1,0 18,22A3,3 0 0,0 18,16z")
-            sp("M8.59,13.51L15.42,17.49"); sp("M15.41,6.51L8.59,10.49")
+            sp("M8.59,13.51L15.42,17.49")
+            sp("M15.41,6.51L8.59,10.49")
         }
     }
 
@@ -330,7 +355,10 @@ object RentoIcons {
     // ─── Communication ──────────────────────────────────────────────────
 
     val Send: ImageVector by lazy {
-        buildIcon("Send") { sp("M22,2L11,13"); sp("M22,2L15,22L11,13L2,9Z") }
+        buildIcon("Send") {
+            sp("M22,2L11,13")
+            sp("M22,2L15,22L11,13L2,9Z")
+        }
     }
 
     val Camera: ImageVector by lazy {
@@ -349,7 +377,7 @@ object RentoIcons {
     val Grid: ImageVector by lazy {
         buildIcon("Grid") {
             listOf(3f to 3f, 14f to 3f, 14f to 14f, 3f to 14f).forEach { (x, y) ->
-                sp("M${x},${y}h7v7h-7Z")
+                sp("M$x,${y}h7v7h-7Z")
             }
         }
     }
@@ -357,7 +385,8 @@ object RentoIcons {
     val ListIcon: ImageVector by lazy {
         buildIcon("List") {
             listOf(6f, 12f, 18f).forEach { y ->
-                sp("M8,${y}L21,${y}"); sp("M3,${y}L3.01,${y}", sw = 3f)
+                sp("M8,${y}L21,$y")
+                sp("M3,${y}L3.01,$y", sw = 3f)
             }
         }
     }
@@ -383,7 +412,9 @@ object RentoIcons {
         buildIcon("FileText") {
             sp("M14,2H6a2,2 0 0,0 -2,2v16a2,2 0 0,0 2,2h12a2,2 0 0,0 2,-2V8z")
             sp("M14,2L14,8L20,8")
-            sp("M16,13L8,13"); sp("M16,17L8,17"); sp("M10,9L9,9L8,9")
+            sp("M16,13L8,13")
+            sp("M16,17L8,17")
+            sp("M10,9L9,9L8,9")
         }
     }
 
@@ -395,16 +426,22 @@ object RentoIcons {
 
     val Lightbulb: ImageVector by lazy {
         buildIcon("Lightbulb") {
-            sp("M9,18h6"); sp("M10,22h4")
-            sp("M15.09,14c0.18,-0.98 0.65,-1.74 1.41,-2.5A6,6 0 1,0 6,8c0,1 0.25,2 0.75,2.8c0.76,0.76 1.23,1.52 1.41,2.5")
+            sp("M9,18h6")
+            sp("M10,22h4")
+            sp(
+                "M15.09,14c0.18,-0.98 0.65,-1.74 1.41,-2.5A6,6 0 1,0 6,8c0,1 0.25,2 0.75,2.8c0.76,0.76 1.23,1.52 1.41,2.5"
+            )
         }
     }
 
     val PackageIcon: ImageVector by lazy {
         buildIcon("Package") {
             sp("M16.5,9.4L7.5,4.21")
-            sp("M21,16V8a2,2 0 0,0 -1,-1.73l-7,-4a2,2 0 0,0 -2,0l-7,4A2,2 0 0,0 3,8v8a2,2 0 0,0 1,1.73l7,4a2,2 0 0,0 2,0l7,-4A2,2 0 0,0 21,16z")
-            sp("M3.27,6.96L12,12.01L20.73,6.96"); sp("M12,22.08L12,12")
+            sp(
+                "M21,16V8a2,2 0 0,0 -1,-1.73l-7,-4a2,2 0 0,0 -2,0l-7,4A2,2 0 0,0 3,8v8a2,2 0 0,0 1,1.73l7,4a2,2 0 0,0 2,0l7,-4A2,2 0 0,0 21,16z"
+            )
+            sp("M3.27,6.96L12,12.01L20.73,6.96")
+            sp("M12,22.08L12,12")
         }
     }
 
@@ -413,8 +450,16 @@ object RentoIcons {
     val Sun: ImageVector by lazy {
         buildIcon("Sun") {
             sp("M12,7A5,5 0 1,0 12,17A5,5 0 0,0 12,7z")
-            listOf("M12,1L12,3", "M12,21L12,23", "M4.22,4.22L5.64,5.64", "M18.36,18.36L19.78,19.78",
-                "M1,12L3,12", "M21,12L23,12", "M4.22,19.78L5.64,18.36", "M18.36,5.64L19.78,4.22").forEach { sp(it) }
+            listOf(
+                "M12,1L12,3",
+                "M12,21L12,23",
+                "M4.22,4.22L5.64,5.64",
+                "M18.36,18.36L19.78,19.78",
+                "M1,12L3,12",
+                "M21,12L23,12",
+                "M4.22,19.78L5.64,18.36",
+                "M18.36,5.64L19.78,4.22"
+            ).forEach { sp(it) }
         }
     }
 
@@ -441,7 +486,8 @@ object RentoIcons {
     val LogOut: ImageVector by lazy {
         buildIcon("LogOut") {
             sp("M9,21H5a2,2 0 0,1 -2,-2V5a2,2 0 0,1 2,-2h4")
-            sp("M16,17L21,12L16,7"); sp("M21,12L9,12")
+            sp("M16,17L21,12L16,7")
+            sp("M21,12L9,12")
         }
     }
 }

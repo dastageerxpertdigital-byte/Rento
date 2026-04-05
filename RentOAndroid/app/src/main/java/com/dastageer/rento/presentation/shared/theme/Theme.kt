@@ -27,8 +27,8 @@ fun RentoTheme(
     ) {
         MaterialTheme(
             colorScheme = colors.toMaterialColorScheme(),
-            typography  = typography.toMaterial3Typography(),
-            content     = content,
+            typography = typography.toMaterial3Typography(),
+            content = content,
         )
     }
 }
@@ -37,35 +37,35 @@ fun RentoTheme(
 
 fun RentoColors.toMaterialColorScheme() = if (isDark) {
     darkColorScheme(
-        primary          = primary,
-        onPrimary        = Color.White,
+        primary = primary,
+        onPrimary = Color.White,
         primaryContainer = primaryTint,
-        background       = bg0,
-        surface          = bg1,
-        surfaceVariant   = bg2,
-        onBackground     = t0,
-        onSurface        = t0,
+        background = bg0,
+        surface = bg1,
+        surfaceVariant = bg2,
+        onBackground = t0,
+        onSurface = t0,
         onSurfaceVariant = t1,
-        error            = red,
-        onError          = Color.White,
-        outline          = border,
-        outlineVariant   = border2,
+        error = red,
+        onError = Color.White,
+        outline = border,
+        outlineVariant = border2,
     )
 } else {
     lightColorScheme(
-        primary          = primary,
-        onPrimary        = Color.White,
+        primary = primary,
+        onPrimary = Color.White,
         primaryContainer = primaryTint,
-        background       = bg0,
-        surface          = bg1,
-        surfaceVariant   = bg2,
-        onBackground     = t0,
-        onSurface        = t0,
+        background = bg0,
+        surface = bg1,
+        surfaceVariant = bg2,
+        onBackground = t0,
+        onSurface = t0,
         onSurfaceVariant = t1,
-        error            = red,
-        onError          = Color.White,
-        outline          = border,
-        outlineVariant   = border2,
+        error = red,
+        onError = Color.White,
+        outline = border,
+        outlineVariant = border2,
     )
 }
 

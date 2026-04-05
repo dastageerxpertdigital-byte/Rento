@@ -26,8 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -109,7 +107,7 @@ fun BottomNavBar(
 
             // Centre FAB
             val glowFraction by RentoAnimations.rememberGlow()
-            
+
             Box(
                 modifier = Modifier
                     .size(54.dp)
@@ -156,7 +154,7 @@ private fun NavBarItem(
     onClick: () -> Unit,
 ) {
     val colors = LocalRentoColors.current
-    
+
     val backgroundColor by animateColorAsState(
         targetValue = if (isSelected) colors.primaryTint else Color.Transparent,
         animationSpec = tween(220),

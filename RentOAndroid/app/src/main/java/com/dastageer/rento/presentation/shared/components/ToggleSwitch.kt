@@ -12,7 +12,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
@@ -53,8 +52,16 @@ fun ToggleSwitch(
             .clip(RentoShapes.toggleSwitch)
             .background(trackColor)
             .then(
-                if (checked) Modifier.shadow(10.dp, RentoShapes.toggleSwitch, ambientColor = colors.primaryRing, spotColor = colors.primaryRing)
-                else Modifier
+                if (checked) {
+                    Modifier.shadow(
+                        10.dp,
+                        RentoShapes.toggleSwitch,
+                        ambientColor = colors.primaryRing,
+                        spotColor = colors.primaryRing
+                    )
+                } else {
+                    Modifier
+                }
             )
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },

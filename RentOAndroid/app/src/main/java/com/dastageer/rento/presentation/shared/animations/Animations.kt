@@ -10,12 +10,12 @@ import androidx.compose.animation.core.keyframes
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.layout.offset
 
 /**
  * Animation token constants and helpers matching the design spec.
@@ -204,7 +204,9 @@ fun BounceEffect(
  * Shimmer loader brush.
  */
 @Composable
-fun rememberShimmerBrush(colors: com.dastageer.rento.presentation.shared.theme.RentoColors): androidx.compose.ui.graphics.Brush {
+fun rememberShimmerBrush(
+    colors: com.dastageer.rento.presentation.shared.theme.RentoColors
+): androidx.compose.ui.graphics.Brush {
     val shimmerColors = listOf(colors.bg3, colors.bg2, colors.bg3)
     val transition = rememberInfiniteTransition(label = "shimmer")
     val translateAnim by transition.animateFloat(
@@ -233,12 +235,20 @@ fun androidx.compose.ui.Modifier.fadeInSlideUpModifier(
 ): androidx.compose.ui.Modifier {
     val alpha by androidx.compose.animation.core.animateFloatAsState(
         targetValue = if (visible) 1f else 0f,
-        animationSpec = tween(durationMillis = 360, delayMillis = delayMillis, easing = androidx.compose.animation.core.FastOutSlowInEasing),
+        animationSpec = tween(
+            durationMillis = 360,
+            delayMillis = delayMillis,
+            easing = androidx.compose.animation.core.FastOutSlowInEasing
+        ),
         label = "fadeAlpha",
     )
     val offsetY by androidx.compose.animation.core.animateDpAsState(
         targetValue = if (visible) 0.dp else 26.dp,
-        animationSpec = tween(durationMillis = 420, delayMillis = delayMillis, easing = androidx.compose.animation.core.FastOutSlowInEasing),
+        animationSpec = tween(
+            durationMillis = 420,
+            delayMillis = delayMillis,
+            easing = androidx.compose.animation.core.FastOutSlowInEasing
+        ),
         label = "slideOffset",
     )
     return this

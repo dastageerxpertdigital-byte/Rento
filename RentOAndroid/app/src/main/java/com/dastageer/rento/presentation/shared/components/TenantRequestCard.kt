@@ -59,7 +59,7 @@ fun TenantRequestCard(
     val colors = LocalRentoColors.current
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
-    
+
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 0.985f else 1f,
         animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy),
@@ -112,7 +112,7 @@ fun TenantRequestCard(
                         tint = colors.primary
                     )
                 }
-                
+
                 // Name & Move-in Date
                 Column {
                     Text(
@@ -129,7 +129,7 @@ fun TenantRequestCard(
                     )
                 }
             }
-            
+
             // Intent Badge
             RentoBadge(text = data.intent, variant = BadgeVariant.BLUE)
         }
@@ -181,7 +181,7 @@ fun TenantRequestCard(
                     color = colors.t1
                 )
             }
-            
+
             // Budget
             Column(horizontalAlignment = Alignment.End) {
                 Text(

@@ -57,7 +57,7 @@ fun InAppNotificationBanner(
 ) {
     val colors = LocalRentoColors.current
     val statusBarHeight = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
-    
+
     // Auto-dismiss after 4s
     LaunchedEffect(notification?.id) {
         if (notification != null) {
@@ -95,7 +95,7 @@ fun InAppNotificationBanner(
                         .border(1.dp, colors.border2, RoundedCornerShape(16.dp))
                         .pointerInput(Unit) {
                             detectVerticalDragGestures { _, dragAmount ->
-                                if (dragAmount < -10) { 
+                                if (dragAmount < -10) {
                                     // Swipe up detected
                                     onDismiss()
                                 }

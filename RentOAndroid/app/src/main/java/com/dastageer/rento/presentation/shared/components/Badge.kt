@@ -35,16 +35,16 @@ fun RentoBadge(
 
     val bgColor = when (variant) {
         BadgeVariant.PRIMARY -> colors.primaryTint
-        BadgeVariant.RED     -> colors.redTint
-        BadgeVariant.ACCENT  -> colors.accentTint
-        BadgeVariant.BLUE    -> colors.blueTint
+        BadgeVariant.RED -> colors.redTint
+        BadgeVariant.ACCENT -> colors.accentTint
+        BadgeVariant.BLUE -> colors.blueTint
         BadgeVariant.NEUTRAL -> colors.bg3
     }
     val textColor = when (variant) {
         BadgeVariant.PRIMARY -> colors.primary
-        BadgeVariant.RED     -> colors.red
-        BadgeVariant.ACCENT  -> colors.accent
-        BadgeVariant.BLUE    -> colors.blue
+        BadgeVariant.RED -> colors.red
+        BadgeVariant.ACCENT -> colors.accent
+        BadgeVariant.BLUE -> colors.blue
         BadgeVariant.NEUTRAL -> colors.t2
     }
     val borderColor = when (variant) {
@@ -57,8 +57,11 @@ fun RentoBadge(
         .clip(RentoShapes.badge)
         .background(bgColor)
         .then(
-            if (borderColor != null) Modifier.border(1.dp, borderColor, RentoShapes.badge)
-            else Modifier
+            if (borderColor != null) {
+                Modifier.border(1.dp, borderColor, RentoShapes.badge)
+            } else {
+                Modifier
+            }
         )
         .padding(vertical = dimens.badgePadV, horizontal = dimens.badgePadH)
 

@@ -9,14 +9,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.unit.dp
 import com.dastageer.rento.presentation.shared.animations.RentoAnimations
 import com.dastageer.rento.presentation.shared.theme.LocalRentoColors
 import com.dastageer.rento.presentation.shared.theme.LocalRentoDimens
@@ -51,16 +49,19 @@ fun ProgressStepBar(
                 val isCompleted = step < currentStep
 
                 val dotWidth by animateDpAsState(
-                    targetValue = if (isActive) dimens.progressStepDotActiveWidth
-                    else dimens.progressStepDotInactiveWidth,
+                    targetValue = if (isActive) {
+                        dimens.progressStepDotActiveWidth
+                    } else {
+                        dimens.progressStepDotInactiveWidth
+                    },
                     animationSpec = tween(RentoAnimations.PROGRESS_STEP_DURATION),
                     label = "stepDotWidth$step",
                 )
 
                 val dotColor = when {
-                    isActive    -> colors.primary
+                    isActive -> colors.primary
                     isCompleted -> colors.primary2.copy(alpha = 0.55f)
-                    else        -> colors.bg4
+                    else -> colors.bg4
                 }
 
                 Box(

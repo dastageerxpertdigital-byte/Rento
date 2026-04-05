@@ -2,8 +2,6 @@ package com.dastageer.rento.presentation.shared.components
 
 import android.os.Build
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.spring
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
@@ -14,7 +12,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -54,7 +51,7 @@ fun GlassScrim(
     onDismiss: () -> Unit,
 ) {
     val colors = LocalRentoColors.current
-    
+
     AnimatedVisibility(
         visible = visible,
         enter = fadeIn(androidx.compose.animation.core.tween(220)),
@@ -62,7 +59,9 @@ fun GlassScrim(
     ) {
         val blurModifier = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             Modifier.blur(16.dp)
-        } else Modifier
+        } else {
+            Modifier
+        }
 
         Box(
             modifier = Modifier
@@ -87,7 +86,7 @@ private fun CustomCheckbox(
     label: String,
 ) {
     val colors = LocalRentoColors.current
-    
+
     Row(
         modifier = Modifier
             .padding(bottom = 20.dp)
@@ -212,8 +211,8 @@ private fun GlassDialogContent(
                         onClick = onCancel,
                         modifier = Modifier.fillMaxWidth()
                     )
-                    
-                    // We can check if it's destructive via checking the specific icon if we desired, 
+
+                    // We can check if it's destructive via checking the specific icon if we desired,
                     // but usually, confirm button action dictates. If we need to always make it DestructiveButton or Primary,
                     // we can infer from icon or just default to DestructiveButton if context requires it.
                     // For the sake of this shared content, we'll use DestructiveButton or PrimaryButton depending
@@ -336,14 +335,14 @@ fun GlassDialog(
     onDismissSuccess: () -> Unit = {},
 ) {
     val colors = LocalRentoColors.current
-    
+
     val isDismissible = phase != GlassDialogPhase.LOADING && phase != GlassDialogPhase.SUCCESS
 
     // Compose BackHandler handling blocking
     androidx.activity.compose.BackHandler(enabled = visible && !isDismissible) {
         // Block back press
     }
-    
+
     // Auto-dismiss logic on SUCCESS
     LaunchedEffect(phase) {
         if (phase == GlassDialogPhase.SUCCESS) {
@@ -424,7 +423,7 @@ fun GlassBottomSheet(
     onDismissSuccess: () -> Unit = {},
 ) {
     val colors = LocalRentoColors.current
-    
+
     val isDismissible = phase != GlassDialogPhase.LOADING && phase != GlassDialogPhase.SUCCESS
 
     androidx.activity.compose.BackHandler(enabled = visible && !isDismissible) {
@@ -475,7 +474,7 @@ fun GlassBottomSheet(
                         .clip(RoundedCornerShape(100.dp))
                         .background(colors.bg4)
                 )
-                
+
                 // Extra padding wrapper for the bottom 48dp
                 Box(modifier = Modifier.padding(bottom = 20.dp)) {
                     GlassDialogContent(
