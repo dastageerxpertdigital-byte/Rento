@@ -87,10 +87,16 @@ dependencies {
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.remote.config.ktx)
 
+    // Google Sign-In
+    implementation(libs.play.services.auth)
+    implementation(libs.play.services.location)
+
+    // Lifecycle Compose
+    implementation(libs.lifecycle.runtime.compose)
+
     // Google Maps — uncomment when maps API key is configured
     // implementation(libs.maps.compose)
     // implementation(libs.play.services.maps)
-    // implementation(libs.play.services.auth)
 
     // Image Compression
     implementation(libs.compressor)

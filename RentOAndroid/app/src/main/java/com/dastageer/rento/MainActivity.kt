@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
+import com.dastageer.rento.presentation.navigation.RentoNavGraph
 import com.dastageer.rento.presentation.shared.theme.LocalRentoColors
 import com.dastageer.rento.presentation.shared.theme.RentoTheme
 
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colors.bg0,
                 ) {
-                    // RentoNavGraph() — placeholder, replaced in Module 02
+                    RentoNavGraph()
                 }
             }
         }

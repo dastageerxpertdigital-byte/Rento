@@ -48,4 +48,188 @@
     <!-- InAppNotificationBanner -->
     <string name="notif_banner_close_cd">Dismiss notification</string>
     <string name="notif_banner_tap_cd">Open notification</string>
+
+    <!-- ─── Auth — Common ──────────────────────────────────────────────────── -->
+    <string name="auth_email_placeholder">Email address</string>
+    <string name="auth_password_placeholder">Password</string>
+    <string name="auth_confirm_password_placeholder">Confirm Password</string>
+    <string name="auth_full_name_placeholder">Your full name</string>
+    <string name="auth_back_cd">Go back</string>
+    <string name="auth_or_divider">or</string>
+    <string name="auth_google_button">Continue with Google</string>
+    <string name="google_web_client_id">449548580573-lhvk37tlvc8crrqrstlb6ignr3jea807.apps.googleusercontent.com</string>
+
+    <!-- ─── Splash ──────────────────────────────────────────────────────────── -->
+    <string name="splash_app_name">RentO</string>
+
+    <!-- ─── Welcome ─────────────────────────────────────────────────────────── -->
+    <string name="welcome_hero_line1">Your Space</string>
+    <string name="welcome_hero_line2">Awaits You</string>
+    <string name="welcome_subtitle">Rooms, homes &amp; shared spaces that truly feel like home — across Pakistan.</string>
+    <string name="welcome_looking_title">I\'m Looking</string>
+    <string name="welcome_looking_subtitle">Find accommodation that fits your life</string>
+    <string name="welcome_hosting_title">I\'m Hosting</string>
+    <string name="welcome_hosting_subtitle">List your space and find the right tenant</string>
+    <string name="welcome_have_account">Have an account?</string>
+    <string name="welcome_sign_in_link">Sign In</string>
+    <string name="welcome_terms">Terms of Service</string>
+    <string name="welcome_privacy">Privacy Policy</string>
+    <string name="welcome_terms_separator">·</string>
+
+    <!-- ─── Login ───────────────────────────────────────────────────────────── -->
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to continue to your account.</string>
+    <string name="login_forgot_password">Forgot Password?</string>
+    <string name="login_button">Sign In</string>
+    <string name="login_no_account">Don\'t have an account?</string>
+    <string name="login_sign_up_link">Sign Up</string>
+
+    <!-- ─── Register ─────────────────────────────────────────────────────────── -->
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Join thousands finding their perfect space.</string>
+    <string name="register_button">Create Account</string>
+    <string name="register_have_account">Already have an account?</string>
+    <string name="register_sign_in_link">Sign In</string>
+    <string name="register_terms_prefix">By creating an account you agree to our </string>
+    <string name="register_terms_link">Terms of Service</string>
+    <string name="register_terms_and"> and </string>
+    <string name="register_privacy_link">Privacy Policy</string>
+    <string name="register_req_chars">8+ chars</string>
+    <string name="register_req_uppercase">Uppercase</string>
+    <string name="register_req_number">Number</string>
+
+    <!-- ─── Forgot Password ──────────────────────────────────────────────────── -->
+    <string name="forgot_title">Forgot Password?</string>
+    <string name="forgot_subtitle">Enter your email and we\'ll send a reset link.</string>
+    <string name="forgot_button">Send Reset Link</string>
+    <string name="forgot_success_title">Check your inbox</string>
+    <string name="forgot_success_body">We\'ve sent a link to %1$s. Check spam too.</string>
+    <string name="forgot_resend">Resend Email</string>
+    <string name="forgot_resend_throttled">Resend in %1$ds</string>
+    <string name="forgot_back_to_signin">Back to Sign In</string>
+
+    <!-- ─── Email Verification ───────────────────────────────────────────────── -->
+    <string name="verify_title">Verify your email</string>
+    <string name="verify_subtitle">We\'ve sent a verification email. Open it and tap the link to continue.</string>
+    <string name="verify_button">I\'ve Verified</string>
+    <string name="verify_resend">Resend Email</string>
+    <string name="verify_resend_throttled">Resend in %1$ds</string>
+    <string name="verify_wrong_account">Wrong account?</string>
+    <string name="verify_sign_out">Sign Out</string>
+
+    <!-- ─── Blocked ───────────────────────────────────────────────────────────── -->
+    <string name="blocked_title">Account Blocked</string>
+    <string name="blocked_subtitle">Your account has been suspended. For assistance contact:</string>
+    <string name="blocked_admin_fallback">support@rentopk.com</string>
+    <string name="blocked_sign_out">Sign Out</string>
+
+    <!-- ─── Onboarding — Step 1 ──────────────────────────────────────────────── -->
+    <string name="onboarding_step1_title">How will you use RentO?</string>
+    <string name="onboarding_step1_subtitle">Choose your primary goal — you can always switch later.</string>
+    <string name="onboarding_step1_looking_title">I\'m Looking</string>
+    <string name="onboarding_step1_looking_subtitle">Find accommodation that fits your life</string>
+    <string name="onboarding_step1_hosting_title">I\'m Hosting</string>
+    <string name="onboarding_step1_hosting_subtitle">List your space and find the right tenant</string>
+    <string name="onboarding_step1_note_label">BOTH MODES ALWAYS AVAILABLE</string>
+    <string name="onboarding_step1_note">Your choice sets your default feed. You can switch anytime from the home screen.</string>
+
+    <!-- ─── Onboarding — Step 2 ──────────────────────────────────────────────── -->
+    <string name="onboarding_step2_title">Tell us about yourself</string>
+    <string name="onboarding_step2_subtitle">This helps hosts and seekers know who they\'re dealing with.</string>
+    <string name="onboarding_step2_name_label">FULL NAME</string>
+    <string name="onboarding_step2_phone_label">PHONE NUMBER</string>
+    <string name="onboarding_step2_phone_placeholder">+92 3XX XXXXXXX</string>
+    <string name="onboarding_step2_dob_label">DATE OF BIRTH</string>
+    <string name="onboarding_step2_dob_placeholder">Select date (optional)</string>
+    <string name="onboarding_step2_province_label">PROVINCE</string>
+    <string name="onboarding_step2_province_placeholder">Select province</string>
+    <string name="onboarding_step2_city_label">CITY</string>
+    <string name="onboarding_step2_city_placeholder">Select city</string>
+    <string name="onboarding_step2_location_link">Use current location</string>
+
+    <!-- ─── Onboarding — Step 3 ──────────────────────────────────────────────── -->
+    <string name="onboarding_step3_title">Account Type</string>
+    <string name="onboarding_step3_subtitle">This helps tailor your experience.</string>
+    <string name="onboarding_step3_individual_title">Individual</string>
+    <string name="onboarding_step3_individual_subtitle">I\'m a private individual looking or listing my own space.</string>
+    <string name="onboarding_step3_business_title">Business / Agency</string>
+    <string name="onboarding_step3_business_subtitle">I represent a business, agency, or manage multiple properties.</string>
+
+    <!-- ─── Onboarding — Step 4 ──────────────────────────────────────────────── -->
+    <string name="onboarding_step4_title">How did you find us?</string>
+    <string name="onboarding_step4_subtitle">Optional — helps us improve how we reach more people.</string>
+    <string name="onboarding_step4_label">SELECT ALL THAT APPLY</string>
+    <string name="onboarding_step4_skip_note">(OPTIONAL — SKIP TO FINISH)</string>
+    <string name="onboarding_step4_social">Social Media</string>
+    <string name="onboarding_step4_friend">Friend / Word of Mouth</string>
+    <string name="onboarding_step4_google">Google Search</string>
+    <string name="onboarding_step4_tv">TV / Radio</string>
+    <string name="onboarding_step4_appstore">App Store</string>
+    <string name="onboarding_step4_other">Other</string>
+
+    <!-- ─── Onboarding — Navigation Buttons ──────────────────────────────────── -->
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_finish">Finish</string>
+
+    <!-- ─── Auth Errors ───────────────────────────────────────────────────────── -->
+    <string name="auth_error_invalid_email">Invalid email address.</string>
+    <string name="auth_error_wrong_password">Incorrect password.</string>
+    <string name="auth_error_user_not_found">No account found with this email.</string>
+    <string name="auth_error_email_in_use">An account already exists with this email.</string>
+    <string name="auth_error_weak_password">Password must be at least 8 characters.</string>
+    <string name="auth_error_too_many_requests">Too many attempts. Please wait and try again.</string>
+    <string name="auth_error_network">Network error. Please check your connection.</string>
+    <string name="auth_error_google_play">Google Play Services unavailable.</string>
+    <string name="auth_error_generic">An unexpected error occurred. Please try again.</string>
+    <string name="auth_error_name_required">Full name is required.</string>
+    <string name="auth_error_passwords_mismatch">Passwords do not match.</string>
+    <string name="auth_error_province_required">Please select your province.</string>
+    <string name="auth_error_city_required">Please select your city.</string>
+    <string name="auth_error_mode_required">Please choose how you\'ll use RentO.</string>
+    <string name="auth_error_account_type_required">Please select your account type.</string>
+    <string name="auth_error_email_required">Email is required.</string>
+    <string name="auth_error_password_required">Password is required.</string>
+
+    <!-- ─── Notification Channel ────────────────────────────────────────────── -->
+    <string name="notif_channel_name">RentO Notifications</string>
+    <string name="notif_channel_description">Property listings, chat messages, and account alerts.</string>
+
+    <!-- ─── Province / City Data ────────────────────────────────────────────── -->
+    <string-array name="provinces">
+        <item>Sindh</item>
+        <item>Punjab</item>
+        <item>Khyber Pakhtunkhwa</item>
+        <item>Balochistan</item>
+        <item>Islamabad Capital Territory</item>
+        <item>Azad Kashmir</item>
+        <item>Gilgit-Baltistan</item>
+    </string-array>
+    <string-array name="cities_Sindh">
+        <item>Karachi</item><item>Hyderabad</item><item>Sukkur</item>
+        <item>Larkana</item><item>Mirpur Khas</item><item>Nawabshah</item>
+        <item>Thatta</item><item>Jacobabad</item>
+    </string-array>
+    <string-array name="cities_Punjab">
+        <item>Lahore</item><item>Faisalabad</item><item>Rawalpindi</item>
+        <item>Gujranwala</item><item>Sialkot</item><item>Multan</item>
+        <item>Bahawalpur</item><item>Sargodha</item><item>Sheikhupura</item>
+        <item>Rahim Yar Khan</item>
+    </string-array>
+    <string-array name="cities_Khyber_Pakhtunkhwa">
+        <item>Peshawar</item><item>Abbottabad</item><item>Mardan</item>
+        <item>Mingora</item><item>Kohat</item><item>Dera Ismail Khan</item>
+    </string-array>
+    <string-array name="cities_Balochistan">
+        <item>Quetta</item><item>Turbat</item><item>Khuzdar</item><item>Hub</item>
+    </string-array>
+    <string-array name="cities_Islamabad_Capital_Territory">
+        <item>Islamabad</item>
+    </string-array>
+    <string-array name="cities_Azad_Kashmir">
+        <item>Muzaffarabad</item><item>Mirpur</item><item>Rawalakot</item>
+    </string-array>
+    <string-array name="cities_Gilgit_Baltistan">
+        <item>Gilgit</item><item>Skardu</item><item>Chilas</item>
+    </string-array>
 </resources>
